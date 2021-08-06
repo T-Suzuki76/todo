@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+</head>
+<body>
+    <header class="l-header">
+        <span class="l-header__logo">ToDoApp</span>
+    </header>
+    <section class="p-todo">
+        <ul class="p-todo__list" id="js-list">
+        </ul>
+        <div class="p-todo__add">
+            <button class="p-todo__add__btn" id="js-openBtn">new task</button>
+            <form class="p-todo__add__form" id="js-form">
+                <fieldset class="p-todo__add__form__field">
+                    <span class="p-todo__add__form__field__close" id="js-close">×</span>
+                    <label for="js-date">期日</label>
+                    <input class="p-todo__add__form__field__date" type="date" id="js-date">
+                    <label for="js-text">タスク</label>
+                    <input class="p-todo__add__form__field__text" type="text" id="js-text">
+                    <label for="js-category">カテゴリー</label>
+                    <select  class="p-todo__add__form__field__category" name="category" id="js-category">
+                    </select>
+                    <div class="p-todo__add__form__field__newCategory c-addCategory">
+                        <input class="c-addCategory__input"></input>
+                        <button class="c-addCategory__btn" type="button">add</button>
+                    </div>
+                    <button class="p-todo__add__form__field__addCategory" type="button">カテゴリを追加する</button>
+                    <ul class="p-todo__add__form__field__categoryList"></ul>
+                    <button class="p-todo__add__form__field__removeCategory" type="button">カテゴリを削除する</button>
+                    <button class="p-todo__add__form__field__btn" type="button" id="js-add">ADD TASK</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="p-todo__edit">
+            <form class="p-todo__edit__form" id="js-editForm">
+                <fieldset class="p-todo__edit__form__field">
+                    <span class="p-todo__edit__form__field__close" id="js-closeEdit">×</span>
+                    <label for="js-editDate">期日</label>
+                    <input class="p-todo__edit__form__field__date" type="date" id="js-editDate">
+                    <label for="js-editText">タスク</label>
+                    <input class="p-todo__edit__form__field__text" type="text" id="js-editText">
+                    <label for="js-editCategory">カテゴリー</label>
+                    <select  class="p-todo__edit__form__field__category" name="category" id="js-editCategory">
+                    </select>
+                    <div class="p-todo__edit__form__field__newCategory c-addCategory">
+                        <input class="c-addCategory__input"></input>
+                        <button class="c-addCategory__btn" type="button">add</button>
+                    </div>
+                    <button class="p-todo__edit__form__field__addCategory" type="button">カテゴリを追加する</button>
+                    <ul class="p-todo__edit__form__field__categoryList"></ul>
+                    <button class="p-todo__edit__form__field__removeCategory" type="button">カテゴリを削除する</button>
+                    <button class="p-todo__edit__form__field__btn" type="button" id="js-edit">EDIT TASK</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="p-todo__confirm" id="js-confirm">
+            <div class="p-todo__confirm__box">
+                <p class="p-todo__confirm__box__alert">タスクを削除しますか？</p>
+                <div class="p-todo__confirm__box__select">
+                    <span class="p-todo__confirm__box__select__true" id="js-true">Yes</span>
+                    <span class="p-todo__confirm__box__select__false" id="js-false">No</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

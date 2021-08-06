@@ -1,0 +1,395 @@
+body, form, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.l-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #335495;
+  z-index: 100;
+}
+.l-header__logo {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #FEFEFE;
+  display: block;
+  padding: 10px;
+}
+.l-header__menu {
+  width: 30px;
+  height: 100px;
+  background-color: #668BC4;
+  position: fixed;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+.l-header__menu__text {
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  color: #FEFEFE;
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+.l-header__menu:hover {
+  opacity: 0.7;
+}
+
+.p-todo {
+  margin: 60px 40px;
+}
+.p-todo__list {
+  max-width: 600px;
+  margin: 30px auto 86px;
+}
+.p-todo__list__item {
+  position: relative;
+  list-style: none;
+  margin: 20px 0;
+}
+.p-todo__list__item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #668BC4;
+  margin-top: 15px;
+}
+.p-todo__list__item__day {
+  margin-right: 10px;
+  color: #335495;
+}
+.p-todo__list__item__category {
+  color: #335495;
+}
+.p-todo__list__item__edit {
+  margin-right: 10%;
+}
+.p-todo__list__item__edit, .p-todo__list__item__check {
+  width: 45%;
+  height: 50px;
+  background-color: #A5BECF;
+  color: #FEFEFE;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: -1;
+}
+.p-todo__list__item p {
+  margin-right: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.p-todo__add {
+  width: 100%;
+  background-color: #A5BECF;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.p-todo__add__btn {
+  display: block;
+  padding: 20px 100px;
+  margin: 0 auto;
+  background-color: #FEFEFE;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #335495;
+  text-transform: uppercase;
+}
+.p-todo__add__btn:hover {
+  opacity: 0.7;
+}
+.p-todo__add__form {
+  position: fixed;
+  top: -5000px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(102, 139, 196, 0.6);
+  transition: ease-in-out 0.4s;
+}
+.p-todo__add__form__field {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  margin: 0 auto;
+  border: none;
+}
+.p-todo__add__form__field__close {
+  color: #FEFEFE;
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.p-todo__add__form__field label {
+  color: #FEFEFE;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.p-todo__add__form__field__date {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__add__form__field__text {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__add__form__field__category {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__add__form__field__category option {
+  cursor: pointer;
+}
+.p-todo__add__form__field__addCategory {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 10px;
+  color: #FEFEFE;
+  font-weight: bold;
+  cursor: pointer;
+}
+.p-todo__add__form__field__addCategory:hover {
+  color: #668BC4;
+}
+.p-todo__add__form__field__categoryList {
+  display: none;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
+.p-todo__add__form__field__categoryList.is-open {
+  display: flex;
+}
+.p-todo__add__form__field__categoryList li {
+  list-style: none;
+}
+.p-todo__add__form__field__categoryList__btn {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  background-color: #FEFEFE;
+  border: 1px solid #668BC4;
+  color: #668BC4;
+}
+.p-todo__add__form__field__removeCategory {
+  margin-top: 10px;
+}
+.p-todo__add__form__field__btn {
+  max-width: 500px;
+  border: none;
+  background-color: #FEFEFE;
+  margin: 30px 10px 10px;
+  padding: 15px 0;
+  color: #668BC4;
+  cursor: pointer;
+}
+.p-todo__add__form.is-open {
+  top: 0;
+}
+.p-todo__edit__form {
+  position: fixed;
+  top: -5000px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(102, 139, 196, 0.6);
+  transition: ease-in-out 0.4s;
+}
+.p-todo__edit__form__field {
+  max-width: 500px;
+  display: flex;
+  padding-top: 60px;
+  flex-direction: column;
+  margin: 0 auto;
+  border: none;
+}
+.p-todo__edit__form__field__close {
+  color: #FEFEFE;
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.p-todo__edit__form__field label {
+  color: #FEFEFE;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.p-todo__edit__form__field__date {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__edit__form__field__text {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__edit__form__field__category {
+  margin: 0px 10px 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.p-todo__edit__form__field__category option {
+  cursor: pointer;
+}
+.p-todo__edit__form__field__addCategory, .p-todo__edit__form__field__removeCategory, .p-todo__add__form__field__removeCategory {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 10px;
+  color: #FEFEFE;
+  font-weight: bold;
+  cursor: pointer;
+}
+.p-todo__edit__form__field__addCategory:hover, .p-todo__edit__form__field__removeCategory:hover, .p-todo__add__form__field__removeCategory:hover {
+  color: #668BC4;
+}
+.p-todo__edit__form__field__categoryList {
+  display: none;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+}
+.p-todo__edit__form__field__categoryList.is-open {
+  display: flex;
+}
+.p-todo__edit__form__field__categoryList li {
+  list-style: none;
+}
+.p-todo__edit__form__field__categoryList__btn {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  background-color: #FEFEFE;
+  border: 1px solid #668BC4;
+  color: #668BC4;
+}
+.p-todo__edit__form__field__removeCategory {
+  margin-top: 10px;
+}
+.p-todo__edit__form__field__btn {
+  max-width: 500px;
+  border: none;
+  background-color: #FEFEFE;
+  margin: 30px 10px 10px;
+  padding: 15px 0;
+  color: #668BC4;
+  cursor: pointer;
+}
+.p-todo__edit__form.is-open {
+  top: 0;
+}
+.p-todo__confirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: -10;
+  opacity: 0;
+  transition: ease-in-out 0.1s;
+}
+.p-todo__confirm__box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%);
+  width: 300px;
+  background-color: #FEFEFE;
+  border: 2px solid #668BC4;
+}
+.p-todo__confirm__box__alert {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #335495;
+  text-align: center;
+  margin-top: 50px;
+}
+.p-todo__confirm__box__select {
+  margin: 30px auto 50px;
+}
+.p-todo__confirm__box__select__true, .p-todo__confirm__box__select__false {
+  display: inline-block;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #335495;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #335495;
+  cursor: pointer;
+}
+.p-todo__confirm__box__select__true {
+  margin-right: 80px;
+}
+.p-todo__confirm.is-open {
+  z-index: 10;
+  opacity: 1;
+}
+
+.c-addCategory {
+  display: none;
+  width: 100%;
+  padding: 0px 10px 10px 10px;
+  box-sizing: border-box;
+}
+.c-addCategory__input {
+  padding: 10px;
+  cursor: pointer;
+  width: 70%;
+  margin-right: 10px;
+}
+.c-addCategory__btn {
+  width: 30%;
+  height: 40px;
+  text-transform: uppercase;
+  color: #668BC4;
+  border: none;
+  background-color: #FEFEFE;
+  cursor: pointer;
+}
+.c-addCategory.is-open {
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
